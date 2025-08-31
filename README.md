@@ -10,8 +10,7 @@
 This repository contains a project investigating the relationship between **market correlation topology** and **martingale-based pricing errors** using historical stock data. The analysis combines **topological data analysis (TDA)** with **Monte Carlo martingale simulations** to explore whether structural changes in asset correlations can predict deviations in pricing models.
 
 For full details, methodology, derivations, and results, please refer to the main Jupyter notebook:
-
-[**Topological_Martingale_Risk.ipynb**](Topological_Martingale_Risk.ipynb)
+[**Topological_Martingale_Risk.ipynb**]
 
 ---
 
