@@ -24,18 +24,20 @@ For full details, methodology, derivations, and results, please refer to the mai
 
 ## Repository Structure
 
+```text
 topological-martingale-risk/
-├─ Topological_Martingale_Risk.ipynb # Main notebook
-├─ main.py # Python orchestrator
-├─ requirements.txt # Python dependencies
-├─ README.md # This file
-├─ notebooks/ # Individual scripts for each step
-│ ├─ 01_data_prep.py
-│ ├─ 02_correlation_networks.py
-│ ├─ 03_topology_analysis.py
-│ ├─ 04_martingale_pricing.py
-│ └─ 05_integration_results.py
-└─ results/ # Generated plots and CSVs
-  ├─ summaries/
-  └─ plots/
+├── Topological_Martingale_Risk.ipynb   # Main notebook with full analysis
+├── main.py                             # Python orchestrator for pipeline
+├── requirements.txt                    # Python dependencies
+├── README.md                            # This file
+├── notebooks/                           # Scripts for each step of the pipeline
+│   ├── 01_data_prep.py
+│   ├── 02_correlation_networks.py
+│   ├── 03_topology_analysis.py
+│   ├── 04_martingale_pricing.py
+│   └── 05_integration_results.py
+└── results/                             # Generated outputs
+    ├── summaries/                       # CSVs of prices, returns, persistence, MC pricing, integration
+    └── plots/                           # MST plots, persistence histograms, Betti vs Price scatter
+
 
