@@ -1,0 +1,30 @@
+# Data handling
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11
+
+# Plotting
+matplotlib>=3.8
+plotly>=5.22
+
+# Machine learning / analysis
+scikit-learn==1.3.2
+statsmodels>=0.14
+
+# Finance data
+yfinance>=0.2
+
+# Graph / network analysis
+networkx>=3.2
+
+# Topology / persistent homology
+giotto-tda>=0.6
+ripser>=0.6
+persim>=0.3
+GUDHI>=3.9
+
+# Speedups
+numba>=0.59
+
+# Config / YAML support (if needed later)
+pyyaml>=6.0
