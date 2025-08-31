@@ -38,12 +38,70 @@ The pipeline is fully automated, from data acquisition to integration and plotti
   d_{ij} = \sqrt{2(1 - \rho_{ij})}
   \]  
 
-  where \(\rho_{ij}\) is the Pearson correlation between assets \(i\) and \(j\)._
+  where \(\rho_{ij}\) is the Pearson correlation between assets \(i\) and \(j\).  
 
+- Construct a **Minimum Spanning Tree (MST)** to visualise the correlation network.
 
+### 3. Topological Analysis (TDA)
 
+- Use **Vietoris-Rips persistence** to compute **0D and 1D homology** of the correlation distance matrix.  
+- Key features:
+  - **H0**: connected components (Betti0)  
+  - **H1**: loops (Betti1 / persistence intervals)
 
+- Compute **H1 total persistence**:
 
+  \[
+  \text{H1 Total Persistence} = \sum_{i} (\text{death}_i - \text{birth}_i)
+  \]  
+
+  This measures the “strength” of loop structures in the correlation network.
+
+### 4. Monte Carlo Martingale Pricing
+
+- For each rolling window of returns:
+
+  \[
+  S_{t+\Delta t} = S_t \exp\Big((\mu - 0.5\sigma^2)\Delta t + \sigma \sqrt{\Delta t} Z_t\Big), \quad Z_t \sim N(0,1)
+  \]
+
+  where \(S_t\) is the price, \(\mu = 0\), and \(\sigma\) is estimated from returns.  
+
+- Compute the **mean Monte Carlo terminal price** and compare it to observed returns.  
+- Define **pricing error** as the absolute difference:
+
+  \[
+  \text{Pricing Error} = | \text{MC Price} - \text{Observed Mean Price} |
+  \]
+
+### 5. Integration
+
+- For each rolling window:
+  - Compute **H1 total persistence** from topology analysis.  
+  - Compute **Monte Carlo pricing error** for the same window.  
+
+- Produce a **scatter plot** of `H1 Total Persistence` vs `Pricing Error`.  
+- Save integration results as CSV for further analysis.
+
+---
+
+## Installation
+
+```bash
+# Clone repository
+git clone https://github.com/zachmoussallati/topological-martingale-risk.git
+cd topological-martingale-risk
+
+# Create virtual environment (recommended)
+python -m venv .venv
+# Activate:
+# Windows:
+.venv\Scripts\activate
+# Linux/Mac:
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
 
 
 
